@@ -8,7 +8,7 @@ export function assemble(payload = {}, mapper = {}, calculations) {
   // @ts-ignore
   const result = ObjectMapper(payload, mapper)
 
-  const {calculate} = calculations ?? {}
+  const { calculate } = calculations ?? {}
 
   /**
    * If the callback is a function then the callbacks is [callback] if not then callbacks is just
@@ -20,7 +20,7 @@ export function assemble(payload = {}, mapper = {}, calculations) {
     return result
   }
 
-  const customCalculationResult = callbacks.map(callback => {
+  const customCalculationResult = callbacks.map((callback) => {
     if (typeof callback === 'function') {
       return merge(result, callback(result))
     }
