@@ -1,10 +1,11 @@
-import _, {isNumber} from 'lodash'
-import {merge as ObjectMapper} from 'object-mapper'
+import _ from 'lodash'
+import ObjectMapper from 'object-mapper'
 
 export function assemble(payload = {}, mapper = {}, calculations) {
   /**
    * Not sure it will work or not have to check
    */
+  // @ts-ignore
   const result = ObjectMapper(payload, mapper)
 
   const {calculate} = calculations ?? {}
@@ -40,4 +41,15 @@ export function assemble(payload = {}, mapper = {}, calculations) {
  */
 export function merge(...source) {
   return _.merge({}, ...source)
+}
+
+import * as uuid from 'uuid'
+
+export const generateUUID = (version = '4') => {
+  const uuidGenerator = {
+    '1': () => uuid.v1(),
+    '4': () => uuid.v4(),
+    'NIL_UUID': () => uuid.NIL,
+  }
+  return uuidGenerator[version]()
 }
