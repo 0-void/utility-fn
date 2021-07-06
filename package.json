@@ -1,0 +1,21 @@
+{
+  "name": "utility-fn",
+  "version": "1.0.0",
+  "description": "Utility functions I found useful",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "utility",
+    "function",
+    "node",
+    "javascript"
+  ],
+  "author": "muthukumar",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "object-mapper": "^6.2.0"
+  }
+}
