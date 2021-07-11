@@ -6,8 +6,6 @@ A list of utility functions I created when working on a personal project and fun
 
 ## Installation
 
-Install simple-website-template with npm
-
 ```bash
   git clone https://github.com/muthhukumar/utility-functions.git
   cd utility-functions
