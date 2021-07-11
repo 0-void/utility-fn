@@ -1,3 +1,5 @@
 import { copyToClipboard } from 'index'
 
-test('', () => {})
+test('', () => {
+  void null
+})

@@ -1,3 +1,5 @@
 import { getRandomBytes } from 'index'
 
-test('', () => {})
+test('', () => {
+  void null
+})

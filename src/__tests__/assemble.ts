@@ -1,3 +1,5 @@
 import { assemble } from 'index'
 
-test('', () => {})
+test('', () => {
+  void null
+})

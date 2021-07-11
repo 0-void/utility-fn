@@ -5,7 +5,6 @@ export function assemble(payload = {}, mapper = {}, calculations) {
   /**
    * Not sure it will work or not have to check
    */
-  // @ts-ignore
   const result = ObjectMapper(payload, mapper)
 
   const { calculate } = calculations ?? {}
