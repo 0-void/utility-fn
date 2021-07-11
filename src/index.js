@@ -1,5 +1,6 @@
 import _ from 'lodash'
 import ObjectMapper from 'object-mapper'
+import * as uuid from 'uuid'
 
 export function assemble(payload = {}, mapper = {}, calculations) {
   /**
@@ -42,8 +43,6 @@ export function assemble(payload = {}, mapper = {}, calculations) {
 export function merge(...source) {
   return _.merge({}, ...source)
 }
-
-import * as uuid from 'uuid'
 
 export const generateUUID = (version = '4') => {
   const uuidGenerator = {
