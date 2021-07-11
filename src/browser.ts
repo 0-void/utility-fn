@@ -1,4 +1,4 @@
-export const copyToClipboard = (data, successCallback) => {
+export const copyToClipboard = (data: string, successCallback: (string) => void): void => {
   if (typeof window === 'undefined') {
     throw new Error('`copyToClipboard` should be used in the browser environment')
   }

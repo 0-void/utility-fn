@@ -1,7 +1,13 @@
 import _ from 'lodash'
 import ObjectMapper from 'object-mapper'
 
-export function assemble(payload = {}, mapper = {}, calculations) {
+export function assemble(
+  payload = {},
+  mapper = {},
+  calculations: {
+    calculate: Array<(value) => unknown>
+  },
+): unknown {
   /**
    * Not sure it will work or not have to check
    */
