@@ -5,15 +5,6 @@ describe('finds percentage of the partial value in the total', () => {
     test('50 should be 10 percentage in 500', () => {
       expect(findPercentage(500, 50)).toEqual(10)
     })
-    test('It should return 10 if the passed total and partial value is number string', () => {
-      expect(findPercentage('500', '50')).toEqual(10)
-    })
-    test('It should return 10 if the passed total is number string but the partial value is number', () => {
-      expect(findPercentage('500', 50)).toEqual(10)
-    })
-    test('It should return 10 if the passed partial value is number string but the total value is number', () => {
-      expect(findPercentage(500, '50')).toEqual(10)
-    })
   })
 
   describe('Negative cases', () => {
@@ -28,12 +19,6 @@ describe('finds percentage of the partial value in the total', () => {
     })
     test('It should return 0 if the total value passed as null', () => {
       expect(findPercentage(null, 100)).toEqual(0)
-    })
-    test('It should return 0 if the total value passed as empty string ``', () => {
-      expect(findPercentage('', 100)).toEqual(0)
-    })
-    test('It should return 0 if the partial value passed as empty string ``', () => {
-      expect(findPercentage(100, '')).toEqual(0)
     })
     test('It should return 0 if the both of the value is not passed', () => {
       expect(findPercentage(undefined, undefined)).toEqual(0)
