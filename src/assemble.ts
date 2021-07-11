@@ -1,6 +1,5 @@
 import _ from 'lodash'
 import ObjectMapper from 'object-mapper'
-import * as uuid from 'uuid'
 
 export function assemble(payload = {}, mapper = {}, calculations) {
   /**
@@ -23,7 +22,7 @@ export function assemble(payload = {}, mapper = {}, calculations) {
 
   const customCalculationResult = callbacks.map((callback) => {
     if (typeof callback === 'function') {
-      return merge(result, callback(result))
+      return _.merge(result, callback(result))
     }
     return result
   })
@@ -31,24 +30,4 @@ export function assemble(payload = {}, mapper = {}, calculations) {
   return customCalculationResult.reduce((previous, current) => {
     return Object.assign(previous, current)
   }, {})
-}
-
-/**
- * @description Merge all the object into a single object
- * @exports
- * @function
- * @param  {...any} source
- * @returns {object}
- */
-export function merge(...source) {
-  return _.merge({}, ...source)
-}
-
-export const generateUUID = (version = '4') => {
-  const uuidGenerator = {
-    '1': () => uuid.v1(),
-    '4': () => uuid.v4(),
-    'NIL_UUID': () => uuid.NIL,
-  }
-  return uuidGenerator[version]()
 }
